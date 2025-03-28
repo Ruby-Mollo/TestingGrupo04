@@ -35,4 +35,24 @@ public class ChocolateBagsTest {
         int result = new ChocolateBags().calculate(1, 2, 3);
         Assertions.assertEquals(-1, result);
     }
+
+    //Prueba 1
+    @ParameterizedTest(name = "small={0}, big={1}, total={2}, result={3}")
+    @CsvSource({ "2,2,12,2", "3,2,13,3", "1,2,11,1", "4,1,9,4" })
+    public void bigAndSmallBarsNeeded(int small, int big, int total, int expectedResult) {
+        int result = new ChocolateBags().calculate(small, big, total);
+        Assertions.assertEquals(expectedResult, result);
+    }
+
+    //Prueba 2
+    @ParameterizedTest(name = "small={0}, big={1}, total={2}, result={3}")
+    @CsvSource({ "5,0,5,5", "3,0,3,3", "4,1,4,4", "2,2,2,2" })
+    public void onlySmallBarsNeeded(int small, int big, int total, int expectedResult) {
+        int result = new ChocolateBags().calculate(small, big, total);
+        Assertions.assertEquals(expectedResult, result);
+    }
+
+
+
+
 }
