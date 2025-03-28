@@ -1,4 +1,4 @@
-package tudelft.caesarshift;
+/*package tudelft.caesarshift;
 
 public class CaesarShiftCipher {
 
@@ -25,4 +25,24 @@ public class CaesarShiftCipher {
 
         return sb.toString();
     }
+}*/
+package tudelft.caesarshift;
+
+public class CaesarShiftCipher {
+    public String caesarShiftCipher(String message, int shift){
+        StringBuilder sb = new StringBuilder();
+        shift = shift % 26;
+        for (char currentChar : message.toCharArray()) {
+            if (currentChar == ' ') {
+                sb.append(' ');
+            } else if (currentChar >= 'a' && currentChar <= 'z') {
+                char shiftedChar = (char) (((currentChar - 'a' + shift + 26) % 26) + 'a');
+                sb.append(shiftedChar);
+            } else {
+                return "invalid";
+            }
+        }
+        return sb.toString();
+    }
 }
+
