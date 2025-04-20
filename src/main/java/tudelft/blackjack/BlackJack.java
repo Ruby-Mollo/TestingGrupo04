@@ -2,7 +2,7 @@ package tudelft.blackjack;
 
 public class BlackJack {
 
-    /*public int play(int left, int right) {
+    public int play(int left, int right) {
         int ln = left;
         int rn = right;
         if(ln > 21)
@@ -15,8 +15,8 @@ public class BlackJack {
         else
             return rn;
             //return ln;
-    }*/
-    public int play(int left, int right){
+    }
+    /*public int play(int left, int right){
         int ln = left;
         int rn = right;
         if(ln>21){
@@ -30,6 +30,6 @@ public class BlackJack {
         }
         else return rn;
 
-    }
+    }*/
 
 }
